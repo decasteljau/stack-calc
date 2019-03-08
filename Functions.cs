@@ -33,9 +33,8 @@ namespace Calc
 				RegisterFunction("exp", new GenericFunction1( new GenericFunction1.Func( Math.Exp ) ));
 				RegisterFunction("factorial", new Factorial());
 				RegisterFunction("floor", new GenericFunction1( new GenericFunction1.Func( Math.Floor ) ));
-				RegisterFunction("log", new GenericFunction1( new GenericFunction1.Func( Math.Log ) ));
-				RegisterFunction("logx", new GenericFunction2( new GenericFunction2.Func( Math.Log ) ));
-				RegisterFunction("ln", new Ln());
+				RegisterFunction("ln", new GenericFunction1( new GenericFunction1.Func( Math.Log ) ));
+				RegisterFunction("log", new GenericFunction2( new GenericFunction2.Func( Math.Log ) ));
 				RegisterFunction("log10", new GenericFunction1( new GenericFunction1.Func( Math.Log10 ) ));
 				RegisterFunction("min", new GenericFunction2( new GenericFunction2.Func( Math.Min ) ));
 				RegisterFunction("max", new GenericFunction2( new GenericFunction2.Func( Math.Max ) ));
@@ -178,7 +177,7 @@ namespace Calc
 			public override double Call( List<double> in_parameters )
 			{
 				if( in_parameters.Count != ParameterCount )
-					throw new Exception( "Combination must have 1 parameter" );
+					throw new Exception( "Combination must have 2 parameter" );
 
 				// Check for int
 				if( Math.Truncate( in_parameters[0] ) != in_parameters[0] &&
