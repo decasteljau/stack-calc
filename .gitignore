@@ -1,0 +1,5 @@
+*.suo
+Calc.csproj.user
+.vs
+bin/
+obj/
